@@ -6,5 +6,10 @@ pipeline {
         sh 'echo "blue ocean test"'
       }
     }
+    stage('Gradle build') {
+      steps {
+        build 'Gradle'
+      }
+    }
   }
 }
