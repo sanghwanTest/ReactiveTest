@@ -8,7 +8,4 @@ echo "${server}"'''
       }
     }
   }
-  environment {
-    server = 'Artifactory.server "SERVER_ID"'
-  }
 }
