@@ -3,13 +3,12 @@ pipeline {
   stages {
     stage('start shell') {
       steps {
-        sh 'echo "blue ocean test"'
+        sh '''echo "blue ocean test"
+echo "${server}"'''
       }
     }
-    stage('Gradle build') {
-      steps {
-        build 'Gradle'
-      }
-    }
+  }
+  environment {
+    server = 'Artifactory.server "SERVER_ID"'
   }
 }
