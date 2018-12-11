@@ -8,9 +8,12 @@ pipeline {
     }
     stage('checkGradle') {
       steps {
-        sh '''gradle -v
+        sh '''clean
 pwd'''
       }
     }
+  }
+  environment {
+    gradleName = 'Gradle'
   }
 }
