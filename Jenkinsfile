@@ -1,10 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('start shell') {
+    stage('initMessage') {
       steps {
-        sh '''echo "blue ocean test"
-echo "${server}"'''
+        echo 'blue ocean pipeline init'
+      }
+    }
+    stage('checkGradle') {
+      steps {
+        sh 'gradle -v'
       }
     }
   }
