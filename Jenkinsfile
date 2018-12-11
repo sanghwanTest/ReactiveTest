@@ -8,8 +8,7 @@ pipeline {
     }
     stage('checkGradle') {
       steps {
-        sh '''clean
-pwd'''
+        build 'clean'
       }
     }
   }
