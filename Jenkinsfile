@@ -8,7 +8,8 @@ pipeline {
     }
     stage('checkGradle') {
       steps {
-        sh 'gradle -v'
+        sh '''gradle -v
+pwd'''
       }
     }
   }
