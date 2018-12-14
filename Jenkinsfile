@@ -4,6 +4,7 @@ pipeline {
     stage('initmessage') {
       steps {
         sh 'echo "init test"'
+        sh 'echo "init test2"'
       }
     }
   }
