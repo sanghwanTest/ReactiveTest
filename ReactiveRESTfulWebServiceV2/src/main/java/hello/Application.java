@@ -15,5 +15,6 @@ public class Application {
 		System.out.println("bbb");
 		System.out.println(gwc.getResult());
 		System.out.println("ccc");
+		System.out.println("ddd");
 	}
 }
