@@ -49,5 +49,10 @@ fi'''
         sh 'sudo docker build -f ReactiveRESTfulWebServiceV2/Dockerfile -t testapp2:0.0 .'
       }
     }
+    stage('CreateDockerContainer') {
+      steps {
+        sh 'sudo docker run -d -p 18081:18081 --name app02con testapp2:0.0'
+      }
+    }
   }
 }
