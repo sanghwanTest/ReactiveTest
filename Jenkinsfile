@@ -32,9 +32,9 @@ fi'''
         }
         stage('DeleteDockerImage') {
           steps {
-            sh '''imageName=`sudo docker images | grep testapp2 | awk \'{print $1}\' | wc -l`
-imageTag=`sudo docker images | grep testapp2 | awk \'{print $2}\' | wc -l`
-imageID=`sudo docker images | grep testapp2 | awk \'{print $3}\'`
+            sh '''imageName=`sudo docker images | grep testapp02 | awk \'{print $1}\' | wc -l`
+imageTag=`sudo docker images | grep testapp02 | awk \'{print $2}\' | wc -l`
+imageID=`sudo docker images | grep testapp02 | awk \'{print $3}\'`
 
 if [ ${imageName} -gt 0 ] && [ ${imageTag} -gt 0 ] ; then
         echo "remove docker image"
@@ -46,12 +46,12 @@ fi'''
     }
     stage('CreateDockerImage') {
       steps {
-        sh 'sudo docker build -f ReactiveRESTfulWebServiceV2/Dockerfile -t testapp2:0.0 .'
+        sh 'sudo docker build -f ReactiveRESTfulWebServiceV2/Dockerfile -t testapp02:0.0 .'
       }
     }
     stage('CreateDockerContainer') {
       steps {
-        sh 'sudo docker run -d -p 18081:18081 --name app02con testapp2:0.0'
+        sh 'sudo docker run -d -p 18081:18081 --name app02con testapp02:0.0'
       }
     }
   }
